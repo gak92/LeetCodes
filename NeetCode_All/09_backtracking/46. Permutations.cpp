@@ -45,6 +45,39 @@ public:
   }
 };
 
+/*
+Solution 2: Using swap method
+
+class Solution {
+public:
+    int n;
+    vector<vector<int>> res;
+
+    void solve(int idx, vector<int>& nums)
+    {
+        if(idx == n)                        // base case
+        {
+            res.push_back(nums);
+            return;
+        }
+
+        for(int i=idx; i<n; i++)
+        {
+            swap(nums[i], nums[idx]);
+            solve(idx+1, nums);             // recursive calls
+            swap(nums[i], nums[idx]);       // backtrack
+        }
+    }
+
+    vector<vector<int>> permute(vector<int>& nums) {
+        n = nums.size();
+        solve(0, nums);
+        return res;
+    }
+};
+
+*/
+
 int main()
 {
   Solution obj;
