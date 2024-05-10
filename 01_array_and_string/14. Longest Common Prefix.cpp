@@ -29,5 +29,9 @@ public:
 
 int main()
 {
+  vector<string> strs = {"flower", "flow", "flight"};
+  Solution s;
+  cout << s.longestCommonPrefix(strs) << endl;
+
   return 0;
 }
