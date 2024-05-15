@@ -5,6 +5,31 @@ https://leetcode.com/problems/two-sum/description/
 #include <bits/stdc++.h>
 using namespace std;
 
+/*
+
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        int n = nums.size();
+        unordered_map<int, int> mp;
+
+        for(int i=0; i<n; i++)
+        {
+            int remaining = target - nums[i];       // get the difference
+
+            if(mp.find(remaining) != mp.end()) {    // if present in map
+                return {i, mp[remaining]};          // return the index of both
+            }
+
+            mp[nums[i]] = i;
+        }
+
+        return {};
+    }
+};
+
+*/
+
 class Solution
 {
 public:
