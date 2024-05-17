@@ -5,6 +5,42 @@ https://leetcode.com/problems/evaluate-reverse-polish-notation/description/
 #include <bits/stdc++.h>
 using namespace std;
 
+/*===========================================
+
+class Solution {
+public:
+    int evalRPN(vector<string>& tokens) {
+        stack<int> st;
+        unordered_map<string, function<int (int, int)>> mp = {
+            {"+", [](int num1, int num2) {return num1 + num2;} },
+            {"-", [](int num1, int num2) {return num1 - num2;} },
+            {"*", [](int num1, int num2) {return (long)num1 * (long)num2;} },
+            {"/", [](int num1, int num2) {return num1 / num2;} }
+        };
+
+        for(string& token:tokens)
+        {
+            if(token == "+" || token == "-" || token == "*" || token == "/") {
+                int num2 = st.top();
+                st.pop();
+
+                int num1 = st.top();
+                st.pop();
+
+                int res = mp[token](num1, num2);
+                st.push(res);
+            }
+            else {
+                st.push(stoi(token));
+            }
+        }
+
+        return st.top();
+    }
+};
+
+=============================================*/
+
 /* ===========================================
 
 class Solution {
