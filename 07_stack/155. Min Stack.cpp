@@ -5,6 +5,39 @@ https://leetcode.com/problems/min-stack/description/?envType=study-plan-v2&envId
 #include <bits/stdc++.h>
 using namespace std;
 
+/*
+
+class MinStack {
+private:
+    stack<int> originalStack;
+    stack<int> minStack;
+public:
+    MinStack() {
+
+    }
+
+    void push(int val) {
+        if(minStack.empty() || val <= minStack.top())
+            minStack.push(val);
+        originalStack.push(val);
+    }
+
+    void pop() {
+        if(originalStack.top() == minStack.top())
+            minStack.pop();
+        originalStack.pop();
+    }
+
+    int top() {
+        return originalStack.top();
+    }
+
+    int getMin() {
+        return minStack.top();
+    }
+};
+*/
+
 class MinStack
 {
 private:
