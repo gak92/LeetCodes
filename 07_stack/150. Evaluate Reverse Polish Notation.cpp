@@ -5,6 +5,50 @@ https://leetcode.com/problems/evaluate-reverse-polish-notation/description/
 #include <bits/stdc++.h>
 using namespace std;
 
+/* ===========================================
+
+class Solution {
+private:
+    int calculate(int num1, int num2, string token)
+    {
+        if(token == "+")
+            return num1 + num2;
+        if(token == "-")
+            return num1 - num2;
+        if(token == "*")
+            return long(num1) * long(num2);
+        if(token == "/")
+            return num1 / num2;
+
+        return -1;
+    }
+public:
+    int evalRPN(vector<string>& tokens) {
+        stack<int> st;
+
+        for(string& token:tokens)
+        {
+            if(token == "+" || token == "-" || token == "*" || token == "/") {
+                int num2 = st.top();
+                st.pop();
+
+                int num1 = st.top();
+                st.pop();
+
+                int res = calculate(num1, num2, token);
+                st.push(res);
+            }
+            else {
+                st.push(stoi(token));
+            }
+        }
+
+        return st.top();
+    }
+};
+
+=========================================== */
+
 class Solution
 {
 public:
