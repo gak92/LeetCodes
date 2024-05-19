@@ -36,6 +36,59 @@ public:
   }
 };
 
+/*
+
+
+
+class Solution {
+public:
+    Node* copyRandomList(Node* head) {
+        if(head == NULL)
+            return NULL;
+
+      // 1: insert copy node in between
+      Node* curr = head;
+      while(curr) {
+        Node* currNext = curr->next;        // save current ka next
+
+        curr->next = new Node(curr->val);;  // update curr ka next to copy Node
+        curr->next->next = currNext;          // update copyNode ka next to curr ka next
+
+        curr = currNext;
+      }
+
+      // 2: update random pointer for copy nodes
+      curr = head;
+      while(curr && curr->next) {
+        if(curr->random == NULL) {
+            curr->next->random = NULL;
+        }
+        else {
+            curr->next->random = curr->random->next;
+        }
+        curr = curr->next->next;
+      }
+
+      // 3: separate copy list from the original one
+      curr = head;
+      Node* newHead = head->next;
+      Node* newCurr = newHead;
+
+      while(curr && newCurr) {
+        curr->next = curr->next == NULL ? NULL : curr->next->next;
+        newCurr->next = newCurr->next == NULL ? NULL : newCurr->next->next;
+
+        curr = curr->next;
+        newCurr = newCurr->next;
+      }
+
+      return newHead;
+    }
+};
+
+
+*/
+
 class Solution
 {
 public:
