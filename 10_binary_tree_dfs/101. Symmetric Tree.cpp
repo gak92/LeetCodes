@@ -27,6 +27,7 @@ struct TreeNode
   TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
 };
 
+// Recursive Depth First Search
 class Solution
 {
 private:
@@ -56,6 +57,39 @@ public:
   }
 };
 
+/*
+// Ierative Breadth First Search
+class Solution {
+public:
+    bool isSymmetric(TreeNode* root) {
+        // Iterative
+        if(root == NULL)
+            return true;
+
+        queue<TreeNode*> q;
+        q.push(root->left);
+        q.push(root->right);
+
+        while(!q.empty())
+        {
+            TreeNode* l = q.front(); q.pop();
+            TreeNode* r = q.front(); q.pop();
+
+            if(l == NULL && r == NULL) continue;
+            if(l == NULL || r == NULL) return false;
+            if(l->val != r->val) return false;
+
+            q.push(l->left);
+            q.push(r->right);
+            q.push(l->right);
+            q.push(r->left);
+        }
+
+        return true;
+    }
+};
+
+*/
 int main()
 {
   Solution s;
