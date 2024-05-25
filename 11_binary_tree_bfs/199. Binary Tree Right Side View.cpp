@@ -27,6 +27,35 @@ struct TreeNode
   TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
 };
 
+// Using DFS - PreOrder Traversal
+/*
+
+class Solution {
+private:
+    void preOrder(TreeNode* root, int level, vector<int>& res)
+    {
+        if(root == NULL)
+            return;
+
+        if(res.size() < level)
+            res.push_back(root->val);
+
+        preOrder(root->right, level+1, res);
+        preOrder(root->left, level+1, res);
+    }
+public:
+    vector<int> rightSideView(TreeNode* root) {
+        vector<int> res;
+
+        preOrder(root, 1, res);
+
+        return res;
+    }
+};
+
+*/
+
+// Using BFS
 class Solution
 {
 public:
