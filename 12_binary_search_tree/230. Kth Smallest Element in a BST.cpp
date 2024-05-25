@@ -27,6 +27,39 @@ struct TreeNode
   TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
 };
 
+// DFS - Recursive (Using constant space)
+/*
+
+class Solution {
+private:
+    int res;
+    void inOrder(TreeNode* root, int &k)
+    {
+        if(root == NULL)
+            return;
+
+        inOrder(root->left, k);
+        k--;
+        if(k == 0)
+        {
+            res = root->val;
+            return;
+        }
+
+        inOrder(root->right, k);
+
+    }
+public:
+    int kthSmallest(TreeNode* root, int k) {
+        res = -1;
+        inOrder(root, k);
+
+        return res;
+    }
+};
+
+*/
+
 // DFS - Recursive (Using extra space)
 /*
 
