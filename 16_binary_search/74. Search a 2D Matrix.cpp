@@ -5,6 +5,39 @@ https://leetcode.com/problems/search-a-2d-matrix/?envType=study-plan-v2&envId=to
 #include <bits/stdc++.h>
 using namespace std;
 
+// Solution # 02
+/*
+
+class Solution {
+public:
+    bool searchMatrix(vector<vector<int>>& matrix, int target) {
+        int rows = matrix.size();
+        int cols = matrix[0].size();
+
+        int left  = 0;
+        int right = (rows * cols) - 1;
+
+        while(left <= right)
+        {
+            int mid = (left + right) / 2;
+            int midElem = matrix[mid/cols][mid%cols];
+
+            if(target == midElem)
+                return true;
+
+            if(target > midElem)
+                left = mid + 1;
+            else if(target < midElem)
+                right = mid - 1;
+        }
+
+        return false;
+    }
+};
+
+*/
+
+// Solution # 01
 class Solution
 {
 public:
