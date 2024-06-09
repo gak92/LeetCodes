@@ -5,6 +5,34 @@ https://leetcode.com/problems/search-a-2d-matrix/?envType=study-plan-v2&envId=to
 #include <bits/stdc++.h>
 using namespace std;
 
+// Solution # 03
+/*
+
+class Solution {
+public:
+    bool searchMatrix(vector<vector<int>>& matrix, int target) {
+        int rows = matrix.size();
+        int cols = matrix[0].size();
+
+        int i = 0;
+        int j = cols - 1;
+
+        while(i < rows && j >= 0)
+        {
+            if(target > matrix[i][j])
+                i++;
+            else if(target < matrix[i][j])
+                j--;
+            else
+                return true;
+        }
+
+        return false;
+    }
+};
+
+*/
+
 // Solution # 02
 /*
 
