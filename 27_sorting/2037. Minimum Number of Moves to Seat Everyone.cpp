@@ -5,6 +5,28 @@ https://leetcode.com/problems/minimum-number-of-moves-to-seat-everyone/descripti
 #include <bits/stdc++.h>
 using namespace std;
 
+// Solution # 02
+/*
+
+class Solution {
+public:
+    int minMovesToSeat(vector<int>& seats, vector<int>& students) {
+        int n = seats.size();
+        int res = 0;
+
+        sort(seats.begin(), seats.end());
+        sort(students.begin(), students.end());
+
+        for(int i=0; i<n; i++)
+            res += abs(seats[i] - students[i]);
+
+        return res;
+    }
+};
+
+*/
+
+// Solution # 01
 class Solution
 {
 public:
