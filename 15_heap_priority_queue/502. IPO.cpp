@@ -5,6 +5,44 @@ https://leetcode.com/problems/ipo/description/?envType=study-plan-v2&envId=top-i
 #include <bits/stdc++.h>
 using namespace std;
 
+// Solution # 02- (using maxheap and vector)
+/*
+
+class Solution {
+public:
+    int findMaximizedCapital(int k, int w, vector<int>& profits, vector<int>& capital) {
+        int n = profits.size();
+        vector<pair<int, int>> projects(n);
+
+        for(int i=0; i<n; i++)
+            projects[i] = {capital[i], profits[i]};
+
+        // sort based on capital
+        sort(projects.begin(), projects.end());
+
+        int i = 0;  // to iterate over projects
+        priority_queue<int> pq;     // max heap (to keep max profit projects on top)
+
+        while(k--)
+        {
+            while(i < n && projects[i].first <= w) {
+                pq.push(projects[i].second);
+                i++;
+            }
+
+            if(pq.empty())
+                break;
+
+            w += pq.top();
+            pq.pop();
+        }
+
+        return w;
+    }
+};
+
+*/
+
 // Solution # 01- (using maxheap, vector)
 class Solution
 {
