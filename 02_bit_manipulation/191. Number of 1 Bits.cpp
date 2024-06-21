@@ -5,6 +5,26 @@ https://leetcode.com/problems/number-of-1-bits/?envType=study-plan-v2&envId=top-
 #include <bits/stdc++.h>
 using namespace std;
 
+// Solution # 03 - Traditional School way (dividing by 2, and count the remainder)
+/*
+
+class Solution {
+public:
+    int hammingWeight(int n) {
+        int count = 0;
+
+        while(n != 0)
+        {
+            count += (n % 2);
+            n = n / 2;
+        }
+
+        return count;
+    }
+};
+
+*/
+
 // Solution # 02 - By unsetting(0) the rightmost set bit(1)
 /*
 
