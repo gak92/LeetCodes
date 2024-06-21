@@ -5,6 +5,19 @@ https://leetcode.com/problems/number-of-1-bits/?envType=study-plan-v2&envId=top-
 #include <bits/stdc++.h>
 using namespace std;
 
+// Solution # 04 - Using builtin function
+/*
+
+class Solution {
+public:
+    int hammingWeight(int n) {
+
+        return __builtin_popcount(n);
+    }
+};
+
+*/
+
 // Solution # 03 - Traditional School way (dividing by 2, and count the remainder)
 /*
 
