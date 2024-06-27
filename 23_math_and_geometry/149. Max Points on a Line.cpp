@@ -5,6 +5,78 @@ https://leetcode.com/problems/max-points-on-a-line/description/?envType=study-pl
 #include <bits/stdc++.h>
 using namespace std;
 
+// Solution # 03 (using gcd)
+/*
+
+class Solution {
+public:
+    int maxPoints(vector<vector<int>>& points) {
+        int n = points.size();
+        int res = 0;
+        if(n == 1)
+            return 1;
+
+        for(int i=0; i<n; i++)
+        {
+            unordered_map<string, int> mp;
+            for(int j=0; j<n; j++)
+            {
+                if(i == j)  continue;
+
+                int dy = points[j][1] - points[i][1];
+                int dx = points[j][0] - points[i][0];
+
+                auto gcd = __gcd(dy, dx);
+                string key = to_string(dx/gcd) + "_" + to_string(dy/gcd);
+                mp[key]++;
+            }
+
+            for(auto it : mp)
+                res = max(res, it.second + 1);
+        }
+
+        return res;
+    }
+};
+
+*/
+
+// Solution # 02 - optimal approach
+/*
+
+class Solution {
+public:
+    int maxPoints(vector<vector<int>>& points) {
+        int n = points.size();
+        int res = 0;
+        if(n == 1)
+            return 1;
+
+        for(int i=0; i<n; i++)
+        {
+            unordered_map<double, int> mp;
+            for(int j=0; j<n; j++)
+            {
+                if(i == j)  continue;
+
+                int dy = points[j][1] - points[i][1];
+                int dx = points[j][0] - points[i][0];
+
+                auto theta = atan2(dy, dx);
+                mp[theta]++;
+            }
+
+            for(auto it : mp)
+                res = max(res, it.second + 1);
+        }
+
+        return res;
+    }
+};
+
+*/
+
+// Solution # 01
 class Solution
 {
 public:
