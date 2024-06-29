@@ -5,6 +5,57 @@ https://leetcode.com/problems/all-ancestors-of-a-node-in-a-directed-acyclic-grap
 #include <bits/stdc++.h>
 using namespace std;
 
+// Solution 2 (By reversing the arrow)
+/*
+
+class Solution {
+private:
+    void dfs(int u, unordered_map<int, vector<int>>& adj, vector<bool>& visited)
+    {
+        visited[u] = true;
+
+        for(auto& v : adj[u])
+        {
+            if(visited[v] != true)
+                dfs(v, adj, visited);
+        }
+    }
+public:
+    vector<vector<int>> getAncestors(int n, vector<vector<int>>& edges) {
+        vector<vector<int>> res;
+        unordered_map<int, vector<int>> adj;
+
+        for(auto& edge : edges)
+        {
+            int u = edge[0];
+            int v = edge[1];
+
+            adj[v].push_back(u);
+        }
+
+        for(int u=0; u<n; u++)
+        {
+            vector<int> ancestors;
+            vector<bool> visited(n, false);
+            dfs(u, adj, visited);
+
+            for(int i=0; i<n; i++)
+            {
+                if(i == u) continue;
+                if(visited[i] == true)
+                    ancestors.push_back(i);
+            }
+
+            res.push_back(ancestors);
+        }
+
+        return res;
+    }
+};
+
+*/
+
+// Solution 1
 class Solution
 {
 private:
