@@ -5,6 +5,38 @@ https://leetcode.com/problems/minimum-difference-between-largest-and-smallest-va
 #include <bits/stdc++.h>
 using namespace std;
 
+// Solution # 02 - Using partial sort
+/*
+
+class Solution {
+public:
+    int minDifference(vector<int>& nums) {
+        int n = nums.size();
+
+        if(nums.size() <= 4)
+            return 0;
+
+        partial_sort(nums.begin(), nums.begin()+4, nums.end());
+
+        nth_element(nums.begin()+4, nums.begin()+(n-4), nums.end());
+
+        sort(nums.begin()+(n-4), nums.end());
+
+        int res = INT_MAX;
+
+        for(int l=0; l<4; l++)
+        {
+            int r = n - 4 + l;
+            res = min(res, nums[r] - nums[l]);
+        }
+
+        return res;
+    }
+};
+
+*/
+
+// Solution # 01
 class Solution
 {
 public:
