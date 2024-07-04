@@ -25,6 +25,36 @@ struct ListNode
   ListNode(int x, ListNode *next) : val(x), next(next) {}
 };
 
+// Solution # 02 (Using Recursion)
+/*
+
+class Solution {
+public:
+    ListNode* mergeNodes(ListNode* head) {
+        head = head->next;
+        if(head == NULL)
+            return head;
+
+        ListNode* temp = head;
+        int sum = 0;
+
+        while(temp != NULL && temp->val != 0)
+        {
+            sum += temp->val;
+            temp = temp->next;
+        }
+
+        head->val  = sum;
+        head->next = mergeNodes(temp);
+
+        return head;
+    }
+};
+
+*/
+
+// Solution # 01
+
 class Solution
 {
 public:
