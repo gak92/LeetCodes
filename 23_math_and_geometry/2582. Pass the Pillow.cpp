@@ -5,6 +5,26 @@ https://leetcode.com/problems/pass-the-pillow/description/?envType=daily-questio
 #include <bits/stdc++.h>
 using namespace std;
 
+// Solution # 02
+/*
+
+class Solution {
+public:
+    int passThePillow(int n, int time) {
+
+        int fullRound = time / (n-1);
+        int timeLeft  = time % (n-1);
+
+        if(fullRound % 2 == 0)
+            return timeLeft + 1;
+
+        return n - timeLeft;
+    }
+};
+
+*/
+
+// Solution # 01
 class Solution
 {
 public:
