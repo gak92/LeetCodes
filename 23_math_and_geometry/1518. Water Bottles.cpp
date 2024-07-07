@@ -5,6 +5,18 @@ https://leetcode.com/problems/water-bottles/description/
 #include <bits/stdc++.h>
 using namespace std;
 
+// Solution # 03 - O(1)
+/*
+
+class Solution {
+public:
+    int numWaterBottles(int numBottles, int numExchange) {
+        return numBottles + (numBottles - 1) / (numExchange - 1);
+    }
+};
+
+*/
+
 // Solution # 02 - O(logn)
 /*
 
