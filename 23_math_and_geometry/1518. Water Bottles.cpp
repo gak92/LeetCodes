@@ -5,7 +5,31 @@ https://leetcode.com/problems/water-bottles/description/
 #include <bits/stdc++.h>
 using namespace std;
 
-// Solution # 01
+// Solution # 02 - O(logn)
+/*
+
+class Solution {
+public:
+    int numWaterBottles(int numBottles, int numExchange) {
+        int consumed     = numBottles;
+        int emptyBottles = numBottles;
+
+        while(emptyBottles >= numExchange)
+        {
+            int extraFullBottles = emptyBottles / numExchange;
+            int remaining = emptyBottles % numExchange;
+
+            consumed += extraFullBottles;
+            emptyBottles = remaining + extraFullBottles;
+        }
+
+        return consumed;
+    }
+};
+
+*/
+
+// Solution # 01 - O(n)
 class Solution
 {
 public:
