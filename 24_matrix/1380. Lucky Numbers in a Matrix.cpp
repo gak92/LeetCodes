@@ -41,3 +41,44 @@ public:
         return res;
     }
 };
+
+
+
+// ============= Solution # 02 ==============
+
+/*
+
+class Solution {
+public:
+    vector<int> luckyNumbers (vector<vector<int>>& matrix) {
+        int m = matrix.size();
+        int n = matrix[0].size();
+
+        int rowMinMax = INT_MIN;
+        for(int row=0; row<m; row++) {
+            int rowMin = INT_MAX;
+            for(int col=0; col<n; col++) {
+                rowMin = min(rowMin, matrix[row][col]);
+            }
+            rowMinMax = max(rowMinMax, rowMin);
+        }
+
+        int colMaxMin = INT_MAX;
+        for(int col=0; col<n; col++) {
+            int colMax = INT_MIN;
+            for(int row=0; row<m; row++) {
+                colMax = max(colMax, matrix[row][col]);
+            }
+            colMaxMin = min(colMaxMin, colMax);
+        }
+
+        if(rowMinMax == colMaxMin)
+            return {rowMinMax};
+
+        return {};
+    }
+};
+
+
+
+*/
