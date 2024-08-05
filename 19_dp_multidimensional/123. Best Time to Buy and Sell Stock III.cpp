@@ -43,3 +43,40 @@ public:
         return solve(prices, currDay, transactionLeft, buy, dp);
     }
 };
+
+
+// Solution # 02 - Tabulation
+
+
+class Solution {
+public:
+    int maxProfit(vector<int>& prices) {
+        int n = prices.size();
+        int transactionLeft = 2; 
+        vector<vector<vector<int>>> dp(n+1, vector<vector<int>>(2, vector<int>(transactionLeft+1, 0)));
+
+        for(int currDay=n-1; currDay>=0; currDay--)
+        {
+            for(int buy=0; buy<2; buy++)
+            {
+                for(int tleft=1; tleft<=transactionLeft; tleft++)
+                {
+                    int profit = INT_MIN;
+                    if(buy) {
+                        int buyProfit = dp[currDay+1][0][tleft] - prices[currDay];
+                        int ignoreBuy = dp[currDay+1][1][tleft];
+                        profit = max(buyProfit, ignoreBuy);
+                    }
+                    else {
+                        int sellProfit = dp[currDay+1][1][tleft-1] + prices[currDay];
+                        int ignoreSell = dp[currDay+1][0][tleft];
+                        profit = max(sellProfit, ignoreSell);
+                    }
+                    dp[currDay][buy][tleft] = profit;
+                }
+            }
+        }
+
+        return dp[0][1][transactionLeft];
+    }
+};
