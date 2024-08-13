@@ -60,3 +60,41 @@ int main()
   }
   return 0;
 }
+
+
+
+// Method # 02 (using for loop)
+
+class Solution {
+private:
+    void solve(vector<int>& candidates, int target, vector<int>& curr, vector<vector<int>>& res, int idx)
+    {
+        if(target < 0)
+            return;
+        if(target == 0) {
+            res.push_back(curr);
+            return;
+        }
+
+        for(int i=idx; i<candidates.size(); i++) {
+            if(i > idx && candidates[i] == candidates[i-1]) // skip duplicate
+                continue;
+
+            curr.push_back(candidates[i]);  // DO
+            solve(candidates, target-candidates[i], curr, res, i+1);    // Explore
+            curr.pop_back();
+        }
+    }
+public:
+    vector<vector<int>> combinationSum2(vector<int>& candidates, int target) {
+        vector<vector<int>> res;
+        vector<int> curr;
+
+        sort(candidates.begin(), candidates.end());
+        solve(candidates, target, curr, res, 0);
+
+        return res;
+    }
+};
+
+
